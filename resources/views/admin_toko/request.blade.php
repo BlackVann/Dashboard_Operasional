@@ -1,33 +1,42 @@
 @include('template.header', ['title' => 'Halaman Admin'])
 <body>
  
-   <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><i class="bi bi-justify"></i></button>
-            <span class="navbar-brand mb-0 h1 me-auto">Doni (Admin Toko)</span>
-
-        </div>
-      </nav>
-      
-      @include('template.side_admin_toko', ['home'=>'','request'=>'active','history' =>"", 'stok'=>""])     
+@include('template.nav')
+    
+      @include('template.side_admin_toko', ['request'=>'active'])     
       <div class="container">
         <div class="row">
         
-  
+          @if ($errors->any())
+          <div class="alert alert-danger row">
+            <div>
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <p>{{ $error }}</p>
+                  @endforeach
+              </ul>
+            </div>
+              
+          </div>
+        @else
+        
+        @endif
           <form method="POST" action="/admin/request">
             @csrf
      
             <div id="req-list">
               <div class="req-item">
-                <div class="row">
-                  <div class="col">
+                <div class="row" id="row0">
+                  <div class="col-6">
                     <label>Produk:</label>
-                    <input type="text" list="daftar-produk" name="request[0][nama]" required class="form-control">
+                    <input type="text" list="daftar-produk" name="request[0][nama]" required class="form-control" autocomplete="off">
                   </div>
-                  <div class="col">
+                  <div class="col-4">
                     <label>Jumlah:</label>
-                <input type="number" name="request[0][jumlah]" required class="form-control">
+                <input type="number" name="request[0][jumlah]" required class="form-control"> 
                   </div>
+                <input type="hidden" name="request[0][location]" value="Toko A">
+                  <div class="col-2"><button type="button" class="btn-close" aria-label="Close" onclick="hapus(0)"></button></div>
                 </div>
               </div>
             </div>

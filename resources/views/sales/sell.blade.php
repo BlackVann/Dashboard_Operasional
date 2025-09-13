@@ -1,13 +1,7 @@
 @include('template.header', ['title' => 'Halaman Sales'])
 <body>
  
-   <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><i class="bi bi-justify"></i></button>
-            <span class="navbar-brand mb-0 h1 me-auto">Roy Simajuntak (Sales)</span>
-
-        </div>
-      </nav>
+@include('template.nav')
       @if ($errors->any())
       <div class="alert alert-danger">
           <ul>
@@ -28,19 +22,30 @@
           <div id="form-list">
              
             <div class="form-item">
-              <div class="row">
-                <div class="col">
-                  <label>Produk:</label>
-              <input type="text" list="daftar-produk" name="produk[0][nama]" required class="form-control">
+              <div class="row" id="row0">
+                <div class="col-11">
+                  <div class="row">
+                    <div class="col-8">
+                      <label>Produk:</label>
+                  <input type="text" list="daftar-produk" name="produk[0][nama]" required class="form-control">
+                    </div>
+                    <div class="col-4 ">
+                      <label>Jumlah:</label>
+                      <input type="number" name="produk[0][jumlah]" required class="form-control">
+                    </div>
+                    <div class="col-12">
+                      <label>Customer:</label>
+              <input type="text" name="produk[0][customer]" required class="form-control">
+                    </div>
+                  </div>
                 </div>
-                <div class="col">
-                  <label>Jumlah:</label>
-                  <input type="number" name="produk[0][jumlah]" required class="form-control">
+                <div class="col-1">
+                  <div class="row">
+                    <div class="col-2 col-sm-1 "><button type="button" class="btn-close" aria-label="Close" onclick="hapus(0)"></button></div>
+                  </div>
                 </div>
-                <div class="col">
-                  <label>Customer:</label>
-          <input type="text" name="produk[0][customer]" required class="form-control">
-                </div>
+               
+               
               </div>
               
 

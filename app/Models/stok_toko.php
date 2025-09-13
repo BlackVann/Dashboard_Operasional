@@ -13,8 +13,8 @@ class stok_toko extends Model
     protected $fillable = [
         'name',
         'amount',
-        'price',
-        'deliver'
+        'price','toko','location'
+
         
     ];
     public  function jumlahstok($name,$stok){
@@ -26,6 +26,10 @@ class stok_toko extends Model
         return false;
        }
 }
+public function stokakhir($name,$location){
+   $stok= stok_toko::where('name',$name)->where('location',$location)->first();
+   return $stok->amount;
+}
 public function kurangistok($name,$jumlah){
     $stok=stok_toko::where('name', $name)->first();
     $stok->amount -= $jumlah;
@@ -35,4 +39,5 @@ public function harga($name){
     $stok=stok_toko::where('name', $name)->first();
     return $stok->price;
 }
+
 }

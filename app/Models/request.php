@@ -9,7 +9,7 @@ class request extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable = ['name', 'amount_request', 'amount_received', 'time_request','time_received','amount_status','deliver_status','amount_deliver'];
+    protected $fillable = ['name','code', 'amount_request', 'amount_received', 'time_request','time_received','amount_status','deliver_status','amount_deliver','location','edit'];
 
     public function data_deliver($time){//data untuk driver
         $data = request::where('time_request', $time)

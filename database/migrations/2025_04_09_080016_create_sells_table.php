@@ -18,7 +18,11 @@ return new class extends Migration
             $table->integer('price');
             $table->integer('total');
             $table->timestamp("time");
+            $table->string("code");
             $table->string('customer');
+             $table->string("sales");
+            $table->string('location');
+
         });
     }
 

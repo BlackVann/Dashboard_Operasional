@@ -21,6 +21,9 @@ return new class extends Migration
             $table->timestamp("time_accepted")->nullable();
             $table->string("amount_status");
             $table->boolean('deliver_status');
+            $table->string('location');
+            $table->integer("code");
+            $table->boolean('edit');
         });
     }
 

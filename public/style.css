@@ -1,6 +1,63 @@
 .container{
     margin-top: 10px;
 }
+ a.black{color:black}
 form button{
     margin-top: 10px;
+}
+.row-table{
+    --bs-gutter-x: 0;
+}
+.btn-close{
+    position: relative;
+    top: 0%;
+}
+.identitas td{padding-right: 10px;}
+.profile{
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+}
+a{text-decoration: none;}
+.home{
+    margin-top: 20px;
+}
+.same{margin: 0;  padding-block: 1px;   
+  padding-inline: 6px;}
+@media (max-width: 480px) {
+tr.tr th, tr.tr td,.td{
+    font-size: 12px;
+}
+.btn-close{width: 1px; top: -20%;}
+}
+.identitas{
+    margin-top: 30px;
+}
+.card-body p {margin: 0;}
+i {font-style: normal;}
+
+.daterangepicker td.start-date, .daterangepicker td.end-date{border-radius: 5px 5px 5px 5px;}
+.daterangepicker td.in-range{background-color:white;}
+.daterangepicker td.active, .daterangepicker td.active:hover{background-color: black;}
+.applyBtn{background-color: black;
+border-color: black;}
+.applyBtn:hover{background-color: black;}
+.applyBtn.disabled, .applyBtn:disabled {
+    color: #fff;
+    background-color: #000000;
+    border-color: #000000;
+}
+.form-control:focus{
+    border-color:rgb(255, 255, 255) ;
+    box-shadow: 0 0 0 .25rem rgba(0, 0, 0, 0.70);
+}
+.page-item.active .page-link {background-color: black ; border-color: #000000;}
+.page-link{color: #000000;}
+
+.form-select:focus{border-color:rgb(255, 255, 255) ;
+    box-shadow: 0 0 0 .25rem rgba(0, 0, 0, 0.70);}
+
+.history-stock{
+    padding: revert;
 }

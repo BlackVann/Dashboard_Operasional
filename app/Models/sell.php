@@ -9,6 +9,6 @@ class sell extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable = ['name', 'amount', 'time', 'customer','total','price'];
+    protected $fillable = ['produk', 'out', 'time', 'code','customer','total','price','sales','location'];
 
 }
